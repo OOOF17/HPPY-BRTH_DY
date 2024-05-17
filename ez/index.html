@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Happy Birthday</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        @font-face {
+            font-family: digit;
+            src: url('digital-7_mono.ttf') format("truetype");
+        }
+    </style>
+    <link href="css/default.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/garden_dev.js"></script>
+    <script type="text/javascript" src="js/functions_dev.js"></script>
+</head>
+
+<body>
+    <!-- Background music -->
+    <audio autoplay loop>
+        <source src="Amazing.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div id="mainDiv">
+        <div id="content">
+            <div id="code">
+                <span class="comments"></span><br />
+                <span class="comments">/**</span><br />
+                <span class="space"/><span class="comments">* Executing Birthday Celebration Script...</span><br />
+                <span class="space"/><span class="comments">*/</span><br />
+                <span class="keyword">public class </span>BirthdayCelebration {<br />
+                <span class="space"/><span class="keyword">public static void </span>main(String[] args) {<br />
+                <span class="space"/><span class="space"/><span class="comments">// Loading birthday wishes...</span><br />
+                <span class="space"/><span class="space"/>Wishes currentWishes = <span class="keyword">new</span> Wishes(<span class="string">"Mahaaal Kooo!"</span>);<br />
+                <span class="space"/><span class="space"/><span class="comments">// Displaying birthday wishes...</span><br />
+                <span class="space"/><span class="space"/>currentWishes.display();<br />
+                <span class="space"/><span class="space"/><span class="comments">// Birthday Celebration Program completed. Happy Birthday!</span><br />
+                <span class="space"/>}<br />
+                }<br />
+                <!-- 
+                <span class="comments">// Birthday script completed. Happy Birthday!</span><br />
+                <span class="comments">// O! she doth teach the torches to burn bright</span><br />
+                <span class="comments">// It seems she hangs upon the cheek of night</span><br />
+                <span class="comments">// Like a rich jewel in an Ethiop's ear;</span><br />
+                <span class="comments">// Beauty too rich for use, for earth too dear.</span><br />
+                <span class="keyword">new</span> Thread (){<br />
+                @Override </br>
+                <span class="comments">// I wish you</span><br />
+                while(true){</br>
+                <span class="comments">// happiness,</span><br />
+                u.happiness ++;</br>
+                <span class="comments">// strength,</span><br />
+                u.strength ++;</br>
+                <span class="comments">// more awesome things,</span><br />
+                u.more_awesome_things ++;</br>
+                <span class="comments">// and everything you wish can be achieved.</span><br />
+                }.start()</br>
+                <span class="comments">// The last thing I want say, boring and ordinary, is:</span><br />
+                System.out.println(<span class="string">"Happy Birthday !!!"</span>); -->
+            </div>
+            <div id="loveHeart">
+                <canvas id="garden"></canvas>
+                <div id="words" class="hidden" style="margin-top: -95px;">                    
+                    <div style="margin-bottom: 20px;">
+                        <div id="messages">
+                            </br>
+                            </br>
+                            </br>
+                            </br>
+                            </br>
+                            </br>
+                            <div id="loveu" style="display: none; margin-bottom: 50px;">
+                                Happy Birthday Mahaaal kooo! Sorry kung eto lang muna ang magagawa ko para sayo ah pero masaya ako dahil 20 kana hehe. 
+                                Always remember that I will always be here. I LOOOOOVEEE YOUU MWAAAA!!<br/>
+                                <div class="signature">- Mark mooo ❤️</div>
+                            </div>
+                            
+                            <div id="animationContainer" style="position: relative; margin-top: 50px;">
+                                <!-- Your cake animation element goes here -->
+                            
+                                <div style="display: none;">
+                                    You defy stars from:
+                                    <div id="elapseClock"></div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+    </div>
+    <script type="text/javascript">
+        var offsetX = $("#loveHeart").width() / 2;
+        var offsetY = $("#loveHeart").height() / 2 - 55;
+        var together = new Date();
+        <!-- Example date: 1900.7.8-->
+        together.setFullYear(2004,5, 18);
+        together.setHours(0);
+        together.setMinutes(0);
+        together.setSeconds(0);
+        together.setMilliseconds(0);
+        
+        if (!document.createElement('canvas').getContext) {
+            var msg = document.createElement("div");
+            msg.id = "errorMsg";
+            msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+            document.body.appendChild(msg);
+            $("#code").css("display", "none")
+            $("#copyright").css("position", "absolute");
+            $("#copyright").css("bottom", "10px");
+            document.execCommand("stop");
+        } else {
+            setTimeout(function () {
+                startHeartAnimation();
+                setTimeout(function() {
+                    document.querySelector('#animationContainer > div').style.display = 'block';
+                }, 5000);
+            }, 5000);
+
+            timeElapse(together);
+            setInterval(function () {
+                timeElapse(together);
+            }, 500);
+
+            adjustCodePosition();
+            $("#code").typewriter();
+            
+            animation.onfinish = function() {
+                document.getElementById('elapseClock').parentElement.style.display = 'block';
+            };
+            
+        }
+    </script>
+</body>
+</html>
